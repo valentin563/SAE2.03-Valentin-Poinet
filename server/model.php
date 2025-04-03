@@ -17,3 +17,17 @@ define("HOST", "localhost");
 define("DBNAME", "poinet2");
 define("DBLOGIN", "poinet2");
 define("DBPWD", "poinet2");
+
+
+function getAllMovies(){
+    $cnx = new PDO("mysql:host=" .HOST. ";dbname=" .DBNAME, DBLOGIN, DBPWD);
+    //Reqête sql ppour récupérer le menu avec des paramètres
+    $sql = "select * from Movie";
+    //Prépare la requête sql
+    $stmt = $cnx->prepare($sql);
+    //Execute la requête sql
+    $stmt->execute();
+    //Récupère les résultats ed la requête sous foormes d'objet
+    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $res; //retourne le résultats
+}
