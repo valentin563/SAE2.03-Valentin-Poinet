@@ -37,7 +37,7 @@ DataMovie.request = async function(){
  * s'agit d'une mise à jour (car on a codé le serveur pour qu'il sache quoi faire en fonction de la valeur de todo).
  * 
  * @param {*} fdata un objet FormData contenant les données du formulaire à envoyer au serveur.
- * @returns la réponse du serveur.
+ * @returns la réponse du serveur.x
  */
 DataMovie.update = async function (fdata) {
     // fetch possède un deuxième paramètre (optionnel) qui est un objet de configuration de la requête HTTP:
