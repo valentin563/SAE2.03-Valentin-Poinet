@@ -1,0 +1,22 @@
+<div class="addMovie">
+    <h4 class="addMovie__title"># Ajouter ou modifier un film</h4>
+    <form class="addMovie__form">
+
+        <select name="jour">
+            <option value="lundi">Lundi</option>
+        </select>
+
+        <input required type="text" name="Titre du film" placeholder="Saisir le texte" pattern="[^0-9]*" title="Numbers are not allowed">
+        <input required type="text" name="Réalisateur" placeholder="Saisir le texte" pattern="[^0-9]*" title="Numbers are not allowed">
+        <input required type="text" name="Catégorie" placeholder="Saisir le texte" pattern="[^0-9]*" title="Numbers are not allowed">
+        <input required type="text" name="Année de sortie" placeholder="Saisir le texte" pattern="[^0-9]*" title="Numbers are not allowed">
+        <input required type="text" name="Durée du film" placeholder="Saisir le texte" pattern="[^0-9]*" title="Numbers are not allowed">
+        <input required type="text" name="Nom du fichier de l'image" placeholder="Saisir le texte" pattern="[^0-9]*" title="Numbers are not allowed">
+        <input required type="text" name="Url du trailer" placeholder="Saisir le texte" pattern="[^0-9]*" title="Numbers are not allowed">
+        <input required type="text" name="Restrition d'âge" placeholder="Saisir le texte" pattern="[^0-9]*" title="Numbers are not allowed">
+
+
+        <input onclick="{{handler}}" type="button" value="Update" name="todo">
+
+    </form>
+</div>

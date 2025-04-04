@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .card{
@@ -14,16 +15,16 @@
     justify-content: center;
     overflow: hidden;
     width: 15rem;   
+    height: 23rem;
     margin-bottom: 5rem;
     border-radius: 1rem;
     background-color: var(--color-gray-dark);
     color: var(--color-white);
     border: solid var(--color-white);
-
 }
 
-.card_image:hover{
-    transition: ease-in-out;
+.card:hover .card_image{
+    transform: scale(1.2);
 }
 
 .container_card_image{
@@ -32,10 +33,13 @@
 }
 
 .card_image{
+    transition: 300ms all;
     width: 15rem;
 }
 
 .card_titre{
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem;
     font-size: 1.5rem;
 }
