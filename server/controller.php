@@ -26,7 +26,7 @@ function readMoviesController(){
 }
 
 
-function updateController(){
+function updateMoviesController(){
     /* Lecture des données de formulaire
       On ne vérifie pas si les données sont valides, on suppose (faudra pas toujours...) que le client les a déjà
       vérifiées avant de les envoyer 
@@ -40,7 +40,7 @@ function updateController(){
     $image = $_REQUEST['image'];
 
     // Mise à jour du menu à l'aide de la fonction updateMenu décrite dans model.php
-    $ok = updateMenu($semaine, $jour, $entree, $plat, $dessert);
+    $ok = updateMovies($semaine, $jour, $entree, $plat, $dessert);
     // $ok est le nombre de ligne affecté par l'opération de mise à jour dans la BDD (voir model.php)
     if ($ok!=0){
       return "Le menu du $jour semaine $semaine est à jour";
