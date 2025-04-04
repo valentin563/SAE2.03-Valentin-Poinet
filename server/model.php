@@ -33,23 +33,30 @@ function getAllMovies(){
 }
 
 
-function updateMovies($w, $j, $e, $p, $d){
+function addMovies($na, $ye, $le, $ca, $desc, $dir, $im, $tra, $mi){
     // Connexion à la base de données
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD); 
     // Requête SQL de mise à jour du menu avec des paramètres
-    $sql = "REPLACE INTO Repas (semaine, jour, entree, plat, dessert) 
-            VALUES (:semaine, :jour, :entree, :plat, :dessert)";
+    $sql = "REPLACE INTO Repas (name, year, length,id_category, description, director, image, trailer, min_age) 
+            VALUES (:name, :year, :length,:id_category, :description, :director, :image, :trailer, :min_age)";
     // Prépare la requête SQL
     $stmt = $cnx->prepare($sql);
     // Lie les paramètres aux valeurs
-    $stmt->bindParam(':entree', $e);
-    $stmt->bindParam(':plat', $p);
-    $stmt->bindParam(':dessert', $d);
-    $stmt->bindParam(':jour', $j);
-    $stmt->bindParam(':semaine', $w);
+    $stmt->bindParam(':name', $na);
+    $stmt->bindParam(':year', $ye);
+    $stmt->bindParam(':length', $le);
+    $stmt->bindParam(':id_category', $ca);
+    $stmt->bindParam(':description', $desc);
+    $stmt->bindParam(':director', $dir);
+    $stmt->bindParam(':image', $im);
+    $stmt->bindParam(':trailer', $tra);
+    $stmt->bindParam(':min_age', $mi);
+
     // Exécute la requête SQL
     $stmt->execute();
     // Récupère le nombre de lignes affectées par la requête
     $res = $stmt->rowCount(); 
     return $res;
 }
+
+

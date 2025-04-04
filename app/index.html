@@ -35,11 +35,11 @@
 
     C.start = function () {
       V.renderNavBar("C.handlerAbout()");
-      C.getMenu();
+      C.getMovie();
 
     };
 
-    C.getMenu = async function(){
+    C.getMovie = async function(){
       let data = await DataMovie.request();
       V.renderCard(data);
 
@@ -71,4 +71,3 @@
 </body>
 
 </html>
-<script type="module"></script>

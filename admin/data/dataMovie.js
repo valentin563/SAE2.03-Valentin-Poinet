@@ -6,18 +6,18 @@ let DataMovie = {};
  /**
      * Fetches data from the server based on the specified day.
      *
-     * @param {string} day - The day parameter to be sent to the server.
+     * @param {string}  - The day parameter to be sent to the server.
      * @returns The response from the server.
      * 
      * DataMenu.request permet de récupérer des données depuis le serveur.
      * Elle prend en paramètre un jour (lundi mardi...) de la semaine et 
      * renvoie les données contenues dans la réponse du serveur (data).
      */
-DataMovie.request = async function(day){
+DataMovie.request = async function(){
     // fetch permet d'envoyer une requête HTTP à l'URL spécifiée. 
     // L'URL est construite en concaténant HOST_URL à "/server/script.php?direction=" et la valeur de la variable dir. 
     // L'URL finale dépend de la valeur de HOST_URL et de dir.
-    let answer = await fetch(HOST_URL + "/server/script.php?jour=" + day);
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=readmovies" );
     // answer est la réponse du serveur à la requête fetch.
     // On utilise ensuite la méthode json() pour extraire de cette réponse les données au format JSON.
     // Ces données (data) sont automatiquement converties en objet JavaScript.
@@ -47,7 +47,7 @@ DataMovie.update = async function (fdata) {
         method: "POST", // méthode HTTP à utiliser
         body: fdata // données à envoyer sous forme d'objet FormData
     };
-    let answer = await fetch(HOST_URL + "/server/script.php?todo=update", config);
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=updatemovies", config);
     let data = await answer.json();
     return data;
 }

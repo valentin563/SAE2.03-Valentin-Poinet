@@ -1,5 +1,6 @@
 .addMovie {
     width:30rem;
+    background-color: var(--color-gray);
 }
 
 .addMovie__title {

@@ -14,4 +14,3 @@ MovieForm.format = function(handler){
 
 
 export {MovieForm};
-
