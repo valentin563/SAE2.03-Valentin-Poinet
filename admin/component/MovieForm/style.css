@@ -1,12 +1,13 @@
 .addMovie {
     width:30rem;
-    background-color: var(--color-gray);
+
+    background-color: var(--color-gray-dark);
 }
 
 .addMovie__title {
     margin-bottom: 0.2rem;
     color: #fff;
-  
+    font-family: var(--ff-sans);
 }
 
 .addMovie__form {
@@ -34,8 +35,6 @@
 }
 
 .addMovie__form input[type=button] {
-    background-color: rgb(113, 91, 69);
-    color:#fff;
-    
-   
+    background-color: rgb(83, 138, 211);
+    color:#fff; 
 }

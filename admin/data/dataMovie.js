@@ -1,5 +1,5 @@
 // URL où se trouve le répertoire "server" sur mmi.unilim.fr
-let HOST_URL = "https://mmi.unilim.fr/~poinet2/SAE2.03-Valentin-Poinet/";//"http://mmi.unilim.fr/~????"; // CHANGE THIS TO MATCH YOUR CONFIG
+let HOST_URL = "https://mmi.unilim.fr/~poinet2/SAE2.03-Valentin-Poinet";//"http://mmi.unilim.fr/~????"; // CHANGE THIS TO MATCH YOUR CONFIG
 
 let DataMovie = {};
 
@@ -47,7 +47,7 @@ DataMovie.update = async function (fdata) {
         method: "POST", // méthode HTTP à utiliser
         body: fdata // données à envoyer sous forme d'objet FormData
     };
-    let answer = await fetch(HOST_URL + "/server/script.php?todo=updatemovies", config);
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=updatemovies" , config);
     let data = await answer.json();
     return data;
 }

@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .card{

@@ -2,19 +2,18 @@
     <h4 class="addMovie__title"># Ajouter ou modifier un film</h4>
     <form class="addMovie__form">
 
-        <input required type="text" name="Titre du film" placeholder="Saisir le titre du film" pattern="[^0-9]*" title="Numbers are not allowed">
-        <input required type="text" name="Réalisateur" placeholder="Saisir le nom du réalisateur" pattern="[^0-9]*" title="Numbers are not allowed">
-        <input required type="text" name="Catégorie" placeholder="Saisir le nom de la catégorie" pattern="[^0-9]*" title="Numbers are not allowed">
-        <input required type="text" name="Année de sortie" placeholder="Saisir l'année de sortie du film" pattern="[^0-9]*" title="Numbers are not allowed">
-        <input required type="text" name="Durée du film" placeholder="Saisir la durée du film en min" pattern="[^0-9]*" title="Numbers are not allowed">
-        <input required type="text" name="Nom du fichier de l'image" placeholder="Saisir le nom du fichier de l'image" pattern="[^0-9]*" title="Numbers are not allowed">
-        <input required type="text" name="Url du trailer" placeholder="Saisir l'URL du trailer" pattern="[^0-9]*" title="Numbers are not allowed">
-        <input required type="text" name="Restrition d'âge" placeholder="Saisir la restriction d'age" pattern="[^0-9]*" title="Numbers are not allowed">
-        <input required type="text" name="Description" placeholder="Saisir la description du film" pattern="[^0-9]*" title="Numbers are not allowed">
+        <input required type="text" name="name" placeholder="Saisir le titre du film" >
+        <input required type="text" name="director" placeholder="Saisir le nom du réalisateur" pattern="[^0-9]*" title="Numbers are not allowed">
+        <input required type="number" name="id_category" placeholder="Saisir le nom de la catégorie">
+        <input required type="number" name="year" placeholder="Saisir l'année de sortie du film">
+        <input required type="number" name="length" placeholder="Saisir la durée du film en min">
+        <input required type="text" name="image" placeholder="Saisir le nom du fichier de l'image" >
+        <input required type="text" name="trailer" placeholder="Saisir l'URL du trailer" >
+        <input required type="number" name="min_age" placeholder="Saisir la restriction d'age">
+        <input required type="text" name="description" placeholder="Saisir la description du film">
 
 
-
-        <input onclick="{{handler}}" type="button" value="Update" name="todo">
+        <input onclick="{{handler}}" type="button" value="Ajouter un film" name="todo">
 
     </form>
 </div>

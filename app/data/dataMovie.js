@@ -27,6 +27,10 @@ DataMovie.request = async function(){
     return data;
 }
 
+
+DataMovie.requestMovieDetails = async function () {
+    
+}
 /* C'EST QUOI async/await ?
     
    Il y a des instructions qui prennent du temps sans qu'on puisse prédire combien.

@@ -42,7 +42,7 @@ function updateMoviesController(){
     $min_age = $_REQUEST['min_age'];
 
     // Mise à jour du menu à l'aide de la fonction updateMenu décrite dans model.php
-    $ok = addMovies($name, $description, $director, $id_category,  $year, $length, $image, $trailer, $min_age);
+    $ok = addMovies($name, $year, $length, $id_category, $description, $director, $image, $trailer, $min_age);
     // $ok est le nombre de ligne affecté par l'opération de mise à jour dans la BDD (voir model.php)
     if ($ok!=0){
       return "Le film $name a été ajouté a la liste";
@@ -51,4 +51,3 @@ function updateMoviesController(){
       return "une erreur est survenue";
     }
   }
-  

@@ -52,13 +52,14 @@ if ( isset($_REQUEST['todo']) ){
   // peut s'écrire aussi avec des if/else
   switch($todo){
 
-    case 'updatemovies':
-      $data = updateMoviesController();
-      break;
-
     case 'readmovies' :
       $data = readMoviesController();
       break;
+      
+    case 'updatemovies':
+      $data = updateMoviesController();
+      break;
+    
       
     default: // il y a un paramètre todo mais sa valeur n'est pas reconnue/supportée
       echo json_encode('[error] Unknown todo value');
