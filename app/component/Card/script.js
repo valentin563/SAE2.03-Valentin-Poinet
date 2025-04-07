@@ -5,6 +5,7 @@ let Card = {};
 
 Card.format = function(movie) {
   let html = template;
+  html = html.replace('<div class="card', `<div class="card" onclick="C.handlerDetail(${movie.id})"`);
   html = html.replace("{{image}}", movie.image);
   html = html.replace("{{titre}}", movie.name);
 

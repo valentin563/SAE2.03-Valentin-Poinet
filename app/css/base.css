@@ -6,4 +6,6 @@
 
 @import "../component/NavBar/style.css" layer(components);
 @import "../component/Card/style.css" layer(components);
+@import "../component/MovieDetail/style.css" layer(components);
+
 

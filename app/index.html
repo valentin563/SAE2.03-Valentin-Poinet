@@ -11,16 +11,16 @@
 <body>
   <header id="header"></header>
 
-  <section id="content">
-    <button onclick="C.getMovie()">
-      <div id="cards" class="card_container"></div>
-    </button>
+
+
+  <section id="content" class="card_container">
   </section>
 
   <script type="module">
     import { NavBar } from "./component/NavBar/script.js";
     import { Card } from "./component/Card/script.js";
     import { DataMovie } from "./data/dataMovie.js";
+    import { MovieDetail } from "./component/MovieDetail/script.js";
 
 
 
@@ -35,9 +35,18 @@
       );
     };
 
-    C.handlerDetail = async function(id){
-      let data = await DataMovie.request();
-    }
+    C.handlerDetail = async function (id) {
+      let movie = await DataMovie.requestMovieDetails(id);
+      if (movie.length == 0) {
+        movie = [
+          { name: 'Soon...', category: 'Soon...', img: 'Soon...', director: 'Soon...', length: 'Soon...', description: 'Soon...', id_category: 'Soon...', image: 'Soon...', trailer: 'Soon...', min_age: 'Soon...' }
+        ]
+      }
+
+      V.renderMovieDetails(movie);
+    };
+
+
 
 
     C.start = function () {
@@ -46,12 +55,16 @@
 
     };
 
-    C.getMovie = async function(){
+    C.getMovie = async function () {
       let data = await DataMovie.request();
+      if (data.length == 0) {
+        data = [
+          { film: 'Coming Soon...',  img: 'Coming Soon...' }
+        ];
+      }
       V.renderCard(data);
 
     }
-
 
 
 
@@ -70,9 +83,14 @@
       header.innerHTML = NavBar.format(hAbout);
     };
 
-    V.renderCard = function(data) {
-      let cards = document.querySelector("#cards");
+    V.renderCard = function (data) {
+      let cards = document.querySelector("#content");
       cards.innerHTML = Card.formatMany(data);
+    };
+
+    V.renderMovieDetails = function (movie) {
+      let cards = document.querySelector("#content");
+      cards.innerHTML = MovieDetail.format(movie);
     };
 
     C.start(); // Démarre l'application

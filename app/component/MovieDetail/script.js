@@ -19,12 +19,4 @@ MovieDetail.format = function(movie) {
   return html;
 };
 
-MovieDetail.formatMany = function(data) {
-    let html = "";
-    for(const movie of data ){
-        html += MovieDetail.format(movie);
-    }
-    return html;
-}
-
 export { MovieDetail };

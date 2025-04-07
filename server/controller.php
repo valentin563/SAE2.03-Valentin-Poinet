@@ -50,4 +50,17 @@ function updateMoviesController(){
     else{
       return "une erreur est survenue";
     }
-  }
+
+
+
+}
+
+
+function readMovieDetailsController(){
+ 
+    // PREMIERE VERIFICATION : LES PARAMETRES EXISTENT ET SONT NON VIDES
+    // Vérification du paramètre 'semaine' 
+      $id = $_REQUEST['id'];
+      $movie = getMovieDetail($id);
+      return $movie;
+}
