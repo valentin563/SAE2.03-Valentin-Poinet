@@ -1,16 +1,21 @@
 <section class="MovieDetail">
-    <h1 class=" titre_MovieDetail">{{name}}</h1>
-    <h2 class=" director_MovieDetail">{{director}}</h2>
-    <div class="container_img_MovieDetail">
-        <img src="../server/images/{{image}}" alt="affiche" class="img_MovieDetail">
+    <h1 class=" MovieDetail__titre">{{name}}</h1>
+    <h2 class=" MovieDetail__director">{{director}}</h2>
+    <div class="MovieDetail__container">
+        <div class="MovieDetail__container_img">
+            <img src="../server/images/{{image}}" alt="affiche" class="MovieDetail__img">
+        </div>
+        <div class="MovieDetail__container_info">
+            <ul class="MovieDetail__info">
+                <li class="MovieDetail__descritpion">{{descritption}}</li>
+                <li class="MovieDetail__year">Année de sortie : {{year}}</li>
+                <li class="MovieDetail__category">Categorie : {{id_category}}</li>
+                <li class="MovieDetail__li align-center">+{{min_age}}</li>
+            </ul>
+        </div>
     </div>
-    <p class="descritpion_MovieDetail">{{descritption}}</p>
-    <ul class="info_MovieDetail">
-        <li class="li_MovieDetail ">{{year}}</li>
-        <li class="li_MovieDetail ">+{{min_age}}</li>
-        <li class="li_MovieDetail ">{{id_category}}</li>
-    </ul>
-    <div class="trailer_MovieDetail">
+    
+    <div class="MovieDetail__trailer">
         <iframe src="{{trailer}}" width="70%" height="100%" frameborder="0">
         </iframe>
     </div>

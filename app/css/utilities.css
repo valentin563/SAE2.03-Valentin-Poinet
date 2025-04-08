@@ -1,3 +1,7 @@
 .font-sans {
   font-family: var(--ff-sans);
 }
+
+.align-center{
+  text-align: center;
+}
