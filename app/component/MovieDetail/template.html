@@ -1,14 +1,17 @@
-<section class="MovieDetail" style="--bg-card:url('../../../server/images/{{image}}')" alt="affiche">
+<section class="MovieDetail">
+    <h1 class=" titre_MovieDetail">{{name}}</h1>
+    <h2 class=" director_MovieDetail">{{director}}</h2>
+    <div class="container_img_MovieDetail">
+        <img src="../server/images/{{image}}" alt="affiche" class="img_MovieDetail">
+    </div>
+    <p class="descritpion_MovieDetail">{{descritption}}</p>
     <ul class="info_MovieDetail">
-        <li class="titre_MovieDetail">{{name}}</li>
-        <li class="director_MovieDetail">{{director}}</li>
-        <li class="descritpion_MovieDetail">{{descritpion}}</li>
-        <li class="year_MovieDetail">{{year}}</li>
-        <li class="min_age_MovieDetail">{{min_age}}</li>
-        <li class="id_category_MovieDetail">{{id_category}}</li>
-        <iframe src="{{trailer}}" class="trailer_MovieDetail"></iframe>
+        <li class="li_MovieDetail ">{{year}}</li>
+        <li class="li_MovieDetail ">+{{min_age}}</li>
+        <li class="li_MovieDetail ">{{id_category}}</li>
     </ul>
-
+    <div class="trailer_MovieDetail">
+        <iframe src="{{trailer}}" width="70%" height="100%" frameborder="0">
+        </iframe>
+    </div>
 </section>
-
-

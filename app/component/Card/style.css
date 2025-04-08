@@ -1,5 +1,6 @@
 .card_container{
     background-color: var(--color-gray);
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
