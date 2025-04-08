@@ -34,7 +34,6 @@ function getAllMovies(){
 
 
 
-
 function addMovies($na, $ye, $le, $ca, $desc, $dir, $im, $tra, $mi){
     // Connexion à la base de données
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD); 
@@ -62,6 +61,7 @@ function addMovies($na, $ye, $le, $ca, $desc, $dir, $im, $tra, $mi){
 }
 
 
+
 function getMovieDetail($id){
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
     $sql = "SELECT Movie.id, Movie.name, Movie.director, Movie.year, Movie.length, Movie.description, Movie.image, Movie.trailer, Movie.min_age, Movie.id_category, Category.name 
@@ -74,5 +74,4 @@ function getMovieDetail($id){
     $movieDetail = $stmt->fetch(PDO::FETCH_OBJ);
 
     return $movieDetail;
-
 }
