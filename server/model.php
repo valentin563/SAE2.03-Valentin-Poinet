@@ -77,3 +77,36 @@ function getMovieDetail($id){
 }
 
 
+
+function getCategory(){
+    // Connexion à la base de données
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    // Requête SQL pour récupérer le menu avec des paramètres
+    $sql = "select * from Category";
+    // Prépare la requête SQL
+    $stmt = $cnx->prepare($sql);
+    // Lie le paramètre à la valeur
+    // $stmt->bindParam(':category', $category);
+    // $stmt->bindParam(':title', $title);
+    // Exécute la requête SQL
+    $stmt->execute();
+    // Récupère les résultats de la requête sous forme d'objets
+    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $res; // Retourne les résultats
+}
+
+
+function getMovieCategories($category){
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "SELECT Movie.id, Movie.name, Movie.director, Movie.year, Movie.length, Movie.description, Movie.image, Movie.trailer, Movie.min_age, Movie.id_category, Category.name 
+    AS category FROM Movie JOIN Category ON Movie.id_category = Category.id WHERE Category.id = :category";
+    $stmt = $cnx->prepare($sql);
+
+    $stmt->bindParam(':category', $category);
+    $stmt->execute();
+
+    $movieCategory = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+    return $movieCategory;
+
+}

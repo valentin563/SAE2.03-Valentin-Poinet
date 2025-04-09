@@ -12,9 +12,10 @@
   <header id="header"></header>
 
 
-  <div id="category">
-    <section id="content" class="card_container"></section>
-  </div>
+  
+    <section id="content" class="card_container">
+      <div id="moviecategory"></div>
+    </section>
 
   <script type="module">
     import { NavBar } from "./component/NavBar/script.js";
@@ -55,21 +56,29 @@
 
     C.start = function () {
       V.renderNavBar("C.handlerAbout()", "C.handlerHome()");
-      C.getMovie();
+      // C.getMovie();
+      C.getMovieCategories();
     };
 
 
 
-    C.getMovie = async function () {
-      let data = await DataMovie.request();
-      if (data.length == 0) {
-        data = [
-          { film: 'Coming Soon...', img: 'Coming Soon...' }
-        ];
-      }
-      V.renderCard(data);
+    // C.getMovie = async function () {
+    //   let data = await DataMovie.request();
+    //   if (data.length == 0) {
+    //     data = [
+    //       { film: 'Coming Soon...', img: 'Coming Soon...' }
+    //     ];
+    //   }
+    //   V.renderCard(data);
 
-    }
+    // }
+
+
+    C.getMovieCategories = async function(){
+      let categories = await DataMovie.requestCategory();
+      let html = await MovieCategory.formatMany(categories);
+      V.renderMovieCategories(html);
+    };
 
 
     // Vue (contient tout ce qui est relatif à l'affichage)
@@ -98,10 +107,11 @@
       cards.innerHTML = MovieDetail.format(movie);
     };
 
-    V.renderMovieCategory = function (category) {
-      let cards = document.querySelector("#category");
-      cards.innerHTML = MovieCategory.format(category);
-    };
+    V.renderMovieCategories = function (html) {
+        let content = document.querySelector("#moviecategory");
+        content.innerHTML = html;
+      };
+
 
     C.start(); // Démarre l'application
   </script>
