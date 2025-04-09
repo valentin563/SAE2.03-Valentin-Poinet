@@ -51,9 +51,8 @@ function updateMoviesController(){
       return "une erreur est survenue";
     }
 
-
-
 }
+
 
 
 function readMovieDetailsController(){

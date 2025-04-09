@@ -22,7 +22,7 @@ define("DBPWD", "poinet2");
 function getAllMovies(){
     $cnx = new PDO("mysql:host=" .HOST. ";dbname=" .DBNAME, DBLOGIN, DBPWD);
     //Reqête sql ppour récupérer le menu avec des paramètres
-    $sql = "select * from Movie";
+    $sql = "SELECT * from Movie order by id_category";
     //Prépare la requête sql
     $stmt = $cnx->prepare($sql);
     //Execute la requête sql
