@@ -75,3 +75,5 @@ function getMovieDetail($id){
 
     return $movieDetail;
 }
+
+

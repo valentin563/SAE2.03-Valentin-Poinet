@@ -12,10 +12,9 @@
   <header id="header"></header>
 
 
-
-  <section id="content" class="card_container">
-  </section>
-
+  <div id="category">
+    <section id="content" class="card_container"></section>
+  </div>
 
   <script type="module">
     import { NavBar } from "./component/NavBar/script.js";
@@ -100,7 +99,7 @@
     };
 
     V.renderMovieCategory = function (category) {
-      let cards = document.querySelector("#content");
+      let cards = document.querySelector("#category");
       cards.innerHTML = MovieCategory.format(category);
     };
 
