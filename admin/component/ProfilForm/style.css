@@ -1,0 +1,40 @@
+.addProfil {
+    width:30rem;
+
+    background-color: var(--color-gray-dark);
+}
+
+.addProfil__title {
+    margin-bottom: 0.2rem;
+    color: #fff;
+    font-family: var(--ff-sans);
+}
+
+.addProfil__form {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    padding:1.5rem;
+}
+
+.addProfil__form select {
+    font-size: medium;
+    border-style: none;
+    margin-top: .8rem;
+}
+
+.addProfil__form input {
+    margin-top: .8rem;
+    font-size: medium;
+    border-style: none;
+    display: inline-block;
+    height: 2rem;
+    
+}
+
+.addProfil__form input[type=button] {
+    background-color: rgb(83, 138, 211);
+    color:#fff; 
+}
