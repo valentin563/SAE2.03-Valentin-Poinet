@@ -19,6 +19,7 @@ define("DBLOGIN", "poinet2");
 define("DBPWD", "poinet2");
 
 
+
 function getAllMovies(){
     $cnx = new PDO("mysql:host=" .HOST. ";dbname=" .DBNAME, DBLOGIN, DBPWD);
     //Reqête sql ppour récupérer le menu avec des paramètres
@@ -95,7 +96,6 @@ function getCategory(){
     return $res; // Retourne les résultats
 }
 
-
 function getMovieCategories($category){
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
     $sql = "SELECT Movie.id, Movie.name, Movie.director, Movie.year, Movie.length, Movie.description, Movie.image, Movie.trailer, Movie.min_age, Movie.id_category, Category.name 
@@ -115,20 +115,18 @@ function getMovieCategories($category){
 
 
 
-function addProfil($na, $img, $age){
+function addProfil($name, $image, $age){
     // Connexion à la base de données
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD); 
     // Requête SQL de mise à jour du menu avec des paramètres
-    $sql = "REPLACE INTO Movie (name, image, age) 
+    $sql = "REPLACE INTO Profil (name, image, age) 
             VALUES (:name, :image, :age)";
     // Prépare la requête SQL
     $stmt = $cnx->prepare($sql);
     // Lie les paramètres aux valeurs
-    $stmt->bindParam(':name', $na);
-    $stmt->bindParam(':image', $img);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':image', $image);
     $stmt->bindParam(':age', $age);
-
-
     // Exécute la requête SQL
     $stmt->execute();
     // Récupère le nombre de lignes affectées par la requête

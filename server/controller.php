@@ -65,8 +65,6 @@ function readMovieDetailsController(){
 
 
 
-
-
 function readCategoriesController() {
   $categories = getCategory();
 
@@ -92,7 +90,7 @@ function readMovieCategoryController() {
 
 
 
-function updateProfilController(){
+function addProfilController(){
   /* Lecture des données de formulaire
      On ne vérifie pas si les données sont valides, on suppose (faudra pas toujours...) que le client les a déjà
      vérifiées avant de les envoyer 
@@ -110,5 +108,7 @@ function updateProfilController(){
    else{
      return "une erreur est survenue";
    }
-
 }
+
+
+

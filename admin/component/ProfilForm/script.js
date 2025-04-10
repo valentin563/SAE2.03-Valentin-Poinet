@@ -1,5 +1,3 @@
-
-
 let templateFile = await fetch('./component/ProfilForm/template.html');
 let template = await templateFile.text();
 

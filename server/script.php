@@ -63,17 +63,17 @@ if ( isset($_REQUEST['todo']) ){
     case 'readmoviedetails':
       $data= readMovieDetailsController();
       break;
-  
+
     case 'readmoviescategory':
       $data= readMovieCategoryController();
       break;
-  
+
     case 'readcategory':
       $data= readCategoriesController();
       break;
-      
+
     case 'addprofil':
-      $data= updateProfilController();
+      $data= addProfilController();
       break;
     
     default: // il y a un paramètre todo mais sa valeur n'est pas reconnue/supportée
@@ -106,7 +106,7 @@ if ( isset($_REQUEST['todo']) ){
   http_response_code(200); // 200 == "OK"
   exit();
 
-   
+
 } // fin de if ( isset($_REQUEST['todo']) )
 
 

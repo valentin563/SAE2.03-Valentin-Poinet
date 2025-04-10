@@ -27,6 +27,8 @@ DataMovie.request = async function(){
     return data;
 }
 
+
+
 /** DataMenu.update
  * 
  * Prend en paramètre un objet FormData (données de formulaire) à envoyer au serveur.
@@ -52,9 +54,6 @@ DataMovie.update = async function (fdata) {
     let data = await answer.json();
     return data;
 }
-
-
-
 
 
 

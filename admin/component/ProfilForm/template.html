@@ -1,12 +1,10 @@
-<div class="addProfil"></div>
-    <h4 class="addProfil__title"># Ajouter ou modifier un film</h4>
+<div class="addProfil">
+    <h4 class="addProfil__title"># Ajouter ou modifier un utilisateur</h4>
     <form class="addProfil__form">
 
-        <input required type="text" name="utilisateur" placeholder="Saisir le nom de l'utilisateur" >
-        <input required type="text" name="icon" placeholder="Saisir le nom du fichier de l'image" >
-        <input required type="number" name="âge" placeholder="Saisir la restriction d'âge de l'utilisateur">
-
-
+        <input required type="text" name="name" placeholder="Saisir le nom de l'utilisateur" >
+        <input required type="text" name="image" placeholder="Saisir le nom du fichier de l'image" >
+        <input required type="number" name="age" placeholder="Saisir la restriction d'âge de l'utilisateur">
 
         <input onclick="{{handler}}" type="button" value="Ajouter un utilisateur" name="todo">
 
