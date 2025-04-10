@@ -88,3 +88,27 @@ function readMovieCategoryController() {
       return "La catégorie $category de ces films n'a pas été récupéré";
   }
 }
+
+
+
+
+function updateProfilController(){
+  /* Lecture des données de formulaire
+     On ne vérifie pas si les données sont valides, on suppose (faudra pas toujours...) que le client les a déjà
+     vérifiées avant de les envoyer 
+   */
+   $name = $_REQUEST['name'];
+   $image = $_REQUEST['image'];
+   $age = $_REQUEST['age'];
+
+   // Mise à jour du menu à l'aide de la fonction updateMenu décrite dans model.php
+   $ok = addProfil($name, $image, $age);
+   // $ok est le nombre de ligne affecté par l'opération de mise à jour dans la BDD (voir model.php)
+   if ($ok!=0){
+     return "Le profil $name a été ajouté a la liste";
+   }
+   else{
+     return "une erreur est survenue";
+   }
+
+}

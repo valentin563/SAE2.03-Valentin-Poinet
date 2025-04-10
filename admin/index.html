@@ -14,11 +14,16 @@
 
   <section id="MovieForm"></section>
 
+  <section id="ProfilForm"></section>
+
+
   <script type="module">
     import { Log } from "./component/Log/script.js";
     import { MovieForm } from "./component/MovieForm/script.js";
     import { DataMovie } from "./data/dataMovie.js";
-
+    import { ProfilForm } from "./component/ProfilForm/script.js";
+    import { DataProfil } from "./data/dataProfil.js";
+    
 
 
 
@@ -54,12 +59,35 @@
       V.renderLog(res);
     }
 
+    C.handlerUpdateProfil = async function () {
+
+      // Sélectionne l'élément possédant la classe `.addMenu__form`
+      // il s'agit de l'élément <form> du composant NewMenuForm
+      let form = document.querySelector('.addProfil__form');
+      /* 
+      Il faut comprendre l'instruction "new FormData(form)" ainsi : 
+      "créer un nouvel objet FormData à partir du formulaire form"
+      Les objets FormData sont des objets natifs du langage Javascript.
+      Très pratique, les créer revient à extraire automatiquement les données
+      du formulaire sous forme de paires clé/valeur ou la clé est le nom de
+      l'élément du formulaire et la valeur est la valeur de l'élément.
+      Par exemple : {jour: 'lundi', entree: 'salade', plat: 'steak', dessert: 'tarte'}
+      Surtout un FormData peut être placé tel quel dans le corps (body) d'une requête
+      HTTP pour être envoyé à un serveur.
+      */
+      let fd = new FormData(form);
+      // Attend la réponse de la fonction `DataMovie.update(fd)`
+      let res = await DataProfil.add(fd);
+      // Affiche le résultat de la mise à jour dans le journal
+      V.renderLog(res);
+    }
 
 
 
     C.start = function () {
       V.renderLog("Démarrage de l'application");
       V.renderMovie("C.handlerUpdate()");
+      V.renderProfil("C.handlerUpdateProfil()");
 
     };
 
@@ -77,6 +105,11 @@
     V.renderMovie = function (handler) {
       let content = document.querySelector("#MovieForm");
       content.innerHTML = MovieForm.format(handler);
+    };
+
+    V.renderProfil = function (handler) {
+      let content = document.querySelector("#ProfilForm");
+      content.innerHTML = ProfilForm.format(handler);
     };
 
     C.start();

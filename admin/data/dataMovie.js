@@ -3,6 +3,7 @@ let HOST_URL = "https://mmi.unilim.fr/~poinet2/SAE2.03-Valentin-Poinet";//"http:
 
 let DataMovie = {};
 
+
  /**
      * Fetches data from the server based on the specified day.
      *
@@ -51,6 +52,9 @@ DataMovie.update = async function (fdata) {
     let data = await answer.json();
     return data;
 }
+
+
+
 
 
 

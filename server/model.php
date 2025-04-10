@@ -110,3 +110,28 @@ function getMovieCategories($category){
     return $movieCategory;
 
 }
+
+
+
+
+
+function addProfil($na, $img, $age){
+    // Connexion à la base de données
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD); 
+    // Requête SQL de mise à jour du menu avec des paramètres
+    $sql = "REPLACE INTO Movie (name, image, age) 
+            VALUES (:name, :image, :age)";
+    // Prépare la requête SQL
+    $stmt = $cnx->prepare($sql);
+    // Lie les paramètres aux valeurs
+    $stmt->bindParam(':name', $na);
+    $stmt->bindParam(':image', $img);
+    $stmt->bindParam(':age', $age);
+
+
+    // Exécute la requête SQL
+    $stmt->execute();
+    // Récupère le nombre de lignes affectées par la requête
+    $res = $stmt->rowCount(); 
+    return $res;
+}
