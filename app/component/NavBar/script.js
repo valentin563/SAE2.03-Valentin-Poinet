@@ -13,4 +13,5 @@ NavBar.format = function (hAbout, hHome, name, image) {
   return html;
 };
 
+
 export { NavBar };

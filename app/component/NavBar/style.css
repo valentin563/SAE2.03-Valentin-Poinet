@@ -23,3 +23,9 @@
     flex-direction: row;
   }
 }
+
+
+
+.navbar__name{
+  margin: 0;
+}

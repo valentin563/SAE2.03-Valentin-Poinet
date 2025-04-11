@@ -4,5 +4,12 @@
     justify-content: start;
     text-align: start;
     margin-left: 2rem;
+    overflow: hidden;
 }
 
+.MovieCategory__film{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
