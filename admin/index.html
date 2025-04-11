@@ -69,7 +69,7 @@
       */
       let fd = new FormData(form);
       // Attend la réponse de la fonction `DataMovie.update(fd)`
-      let res = await DataProfil.add(fd);
+      let res = await DataProfil.addProfil(fd);
       // Affiche le résultat de la mise à jour dans le journal
       V.renderLog(res);
     }

@@ -112,3 +112,7 @@ function addProfilController(){
 
 
 
+function readProfilController(){
+  $profil = getAllProfil();
+  return $profil;
+}

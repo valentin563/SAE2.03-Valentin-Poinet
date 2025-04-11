@@ -12,10 +12,10 @@
   <header id="header"></header>
 
 
-  
-    <section id="content" class="card_container">
-      <div id="moviecategory"></div>
-    </section>
+
+  <section id="content" class="card_container">
+    <div id="moviecategory"></div>
+  </section>
 
   <script type="module">
     import { NavBar } from "./component/NavBar/script.js";
@@ -74,7 +74,7 @@
     // }
 
 
-    C.getMovieCategories = async function(){
+    C.getMovieCategories = async function () {
       let categories = await DataMovie.requestCategory();
       let html = await MovieCategory.formatMany(categories);
       V.renderMovieCategories(html);
@@ -108,9 +108,9 @@
     };
 
     V.renderMovieCategories = function (html) {
-        let content = document.querySelector("#moviecategory");
-        content.innerHTML = html;
-      };
+      let content = document.querySelector("#moviecategory");
+      content.innerHTML = html;
+    };
 
 
     C.start(); // Démarre l'application

@@ -5,3 +5,7 @@
 .align-center{
   text-align: center;
 }
+
+.align-end{
+  align-items: end;
+}
