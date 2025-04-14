@@ -15,7 +15,7 @@
     <div id="moviecategory"></div>
   </section>
 
-  
+
 
   <script type="module">
     import { NavBar } from "./component/NavBar/script.js";
@@ -58,7 +58,7 @@
       let profil = await DataProfil.request();
       if (profil.length == 0) {
         profil = [
-          { name: 'Soon...'}
+          { name: 'Soon...' }
         ]
       }
 
@@ -67,7 +67,7 @@
 
 
     C.start = function () {
-      V.renderNavBar("C.handlerAbout()", "C.handlerHome()","C.handlerProfil()");
+      V.renderNavBar("C.handlerAbout()", "C.handlerHome()", "C.handlerProfil()");
       // C.getMovie();
       C.getMovieCategories();
     };

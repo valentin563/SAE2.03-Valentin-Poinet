@@ -12,12 +12,6 @@ NavBar.format = function (hAbout, hHome, name) {
   return html;
 };
 
-NavBar.formatMany = function(data) {
-  let html = "";
-  for(const profil of data ){
-      html += NavBar.format(profil);
-  }
-  return html;
-}
+
 
 export { NavBar };
