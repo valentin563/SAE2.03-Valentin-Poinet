@@ -113,8 +113,6 @@ function getMovieCategories($category){
 
 
 
-
-
 function addProfil($name, $image, $age){
     // Connexion à la base de données
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD); 
@@ -133,6 +131,7 @@ function addProfil($name, $image, $age){
     $res = $stmt->rowCount(); 
     return $res;
 }
+
 
 
 function getAllProfil(){

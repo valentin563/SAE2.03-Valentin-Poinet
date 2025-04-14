@@ -3,15 +3,21 @@ let template = await templateFile.text();
 
 let NavBar = {};
 
-NavBar.format = function (hAbout, hHome, name, image) {
+NavBar.format = function (hAbout, hHome, name) {
   let html = template;
   html = html.replace("{{hAbout}}", hAbout);
   html = html.replace("{{hHome}}", hHome);
   html = html.replace("{{name}}", name);
-  html = html.replace("{{image}}", image);
 
   return html;
 };
 
+NavBar.formatMany = function(data) {
+  let html = "";
+  for(const profil of data ){
+      html += NavBar.format(profil);
+  }
+  return html;
+}
 
 export { NavBar };
