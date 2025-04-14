@@ -33,15 +33,18 @@
     // Une fois l'application terminée, on pourrait remettre let C.
     window.C = {};
 
-    C.handlerAbout = function () {
-      alert(
-        "Ceci est une base de projet pour la SAE2.03 édition 2025. Bonne chance !"
-      );
+    C.start = async function () {
+      let profiles = await DataProfil.request();
+      V.renderNavBar(profiles);
+      const select = document.getElementById("profile-select");
+      if (select) {
+        select.value = "";
+      }
+      C.getMovieCategories();
     };
 
-    C.handlerHome = function () {
-      location.reload();
-    };
+
+
 
     C.handlerDetail = async function (id) {
       let movie = await DataMovie.requestMovieDetails(id);
@@ -65,15 +68,6 @@
       return profil
     };
 
-
-    C.start = function () {
-      V.renderNavBar("C.handlerAbout()", "C.handlerHome()", "C.handlerProfil()");
-      // C.getMovie();
-      C.getMovieCategories();
-    };
-
-
-
     // C.getMovie = async function () {
     //   let data = await DataMovie.request();
     //   if (data.length == 0) {
@@ -92,6 +86,30 @@
       V.renderMovieCategories(html);
     };
 
+    C.handleProfileChange = function (profileId) {
+      let select = document.getElementById('profileSelect');
+      let avatarImg = document.getElementById('navbar__profileAvatar');
+
+      if (select.selectedIndex == 0) {
+        avatarImg.classList.add('hidden');
+        DataProfile.setCurrentUser(null);
+        console.log("Utilisateur déconnecté, currentUser:", DataProfile.getCurrentUser());
+        C.getMovieCategories(-1);
+        return;
+      }
+
+      let selectedOption = select.options[select.selectedIndex];
+      let currentUser = {
+        id: profileId,
+        name: selectedOption.getAttribute('data-profile-name'),
+        avatar: selectedOption.getAttribute('data-avatar'),
+        minAge: selectedOption.getAttribute('data-min-age')
+      };
+      C.getMovieCategories(currentUser.minAge);
+    };
+
+
+
 
     // Vue (contient tout ce qui est relatif à l'affichage)
     window.V = {};
@@ -104,9 +122,9 @@
      * Elle sélectionne l'élément HTML avec l'ID "header" et y insère le contenu
      * formaté par le composant NavBar.
      */
-    V.renderNavBar = function (hAbout, hHome, name) {
+    V.renderNavBar = function (profiles) {
       let header = document.querySelector("#header");
-      header.innerHTML = NavBar.format(hAbout, hHome, name);
+      header.innerHTML = NavBar.format(profiles);
     };
 
     V.renderCard = function (data) {

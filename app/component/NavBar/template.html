@@ -1,10 +1,8 @@
 <nav class="navbar font-sans">
   <ul class="navbar__list">
-    <li class="navbar__item" onclick="{{hHome}}">Home</li>
-    <li class="navbar__item" onclick="{{hAbout}}">About</li>
+    <li class="navbar__item" onclick="location.href='index.html'">Home</li>
   </ul>
-  <select class="navbar__profil">
-    <option value="">choisir un utilisateurs</option>
-    <option name="name">{{name}}</option>
+  <select id="profile-select" required class="navbar__profil" onchange="C.handleProfileChange()">
+    {{name}}
   </select>
 </nav>
