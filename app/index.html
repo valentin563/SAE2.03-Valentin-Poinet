@@ -57,6 +57,14 @@
       V.renderMovieDetails(movie);
     };
 
+    
+    C.getMovieCategories = async function () {
+      let categories = await DataMovie.requestCategory();
+      let html = await MovieCategory.formatMany(categories);
+      V.renderMovieCategories(html);
+    };
+
+
     C.handlerProfil = async function () {
       let profil = await DataProfil.request();
       if (profil.length == 0) {
@@ -68,25 +76,11 @@
       return profil
     };
 
-    // C.getMovie = async function () {
-    //   let data = await DataMovie.request();
-    //   if (data.length == 0) {
-    //     data = [
-    //       { film: 'Coming Soon...', img: 'Coming Soon...' }
-    //     ];
-    //   }
-    //   V.renderCard(data);
-
-    // }
 
 
-    C.getMovieCategories = async function () {
-      let categories = await DataMovie.requestCategory();
-      let html = await MovieCategory.formatMany(categories);
-      V.renderMovieCategories(html);
-    };
 
-    C.handleProfileChange = function (profileId) {
+
+    C.handleProfileChange = function (profil) {
       let select = document.getElementById('profileSelect');
       let avatarImg = document.getElementById('navbar__profileAvatar');
 
@@ -100,7 +94,7 @@
 
       let selectedOption = select.options[select.selectedIndex];
       let currentUser = {
-        id: profileId,
+        id: profil,
         name: selectedOption.getAttribute('data-profile-name'),
         avatar: selectedOption.getAttribute('data-avatar'),
         minAge: selectedOption.getAttribute('data-min-age')

@@ -1,4 +1,4 @@
-let HOST_URL = "https://mmi.unilim.fr/~poinet2/SAE2.03-Valentin-Poinet";//"http://mmi.unilim.fr/~????"; // CHANGE THIS TO MATCH YOUR CONFIG
+let HOST_URL = "http://mmi.unilim.fr/~poinet2/SAE2.03-Valentin-Poinet";//"http://mmi.unilim.fr/~????"; // CHANGE THIS TO MATCH YOUR CONFIG
 
 
 let DataProfil = {};
