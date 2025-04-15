@@ -57,7 +57,7 @@
       V.renderMovieDetails(movie);
     };
 
-    
+
     C.getMovieCategories = async function () {
       let categories = await DataMovie.requestCategory();
       let html = await MovieCategory.formatMany(categories);
@@ -80,7 +80,7 @@
 
 
 
-    C.handleProfileChange = function (profil) {
+    C.handleProfileChange = function (profiles) {
       let select = document.getElementById('profileSelect');
       let avatarImg = document.getElementById('navbar__profileAvatar');
 
@@ -94,7 +94,7 @@
 
       let selectedOption = select.options[select.selectedIndex];
       let currentUser = {
-        id: profil,
+        id: profiles,
         name: selectedOption.getAttribute('data-profile-name'),
         avatar: selectedOption.getAttribute('data-avatar'),
         minAge: selectedOption.getAttribute('data-min-age')
