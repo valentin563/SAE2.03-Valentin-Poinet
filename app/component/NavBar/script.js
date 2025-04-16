@@ -8,7 +8,6 @@ NavBar.format = function (profiles) {
   html = html.replace("{{name}}", NavBar.profilesOptions(profiles));
   const defaultImage = "";
   html = html.replace("{{imageURL}}", defaultImage);
-  html = html.replace("{{Class}}", "hidden");
   
   return html;
 };

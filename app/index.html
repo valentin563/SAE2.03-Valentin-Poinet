@@ -58,6 +58,20 @@
     };
 
 
+    C.getMovie = async function () {
+      let data = await DataMovie.request();
+      if (data.length == 0) {
+        data = [
+          {
+            name: "Soon...",
+            image: "Soon...",
+            category: "Soon...",
+          },
+        ];
+      }
+      V.renderMovie(data);
+    };
+
     C.getMovieCategories = async function () {
       let categories = await DataMovie.requestCategory();
       let html = await MovieCategory.formatMany(categories);
@@ -81,11 +95,9 @@
 
 
     C.handleProfileChange = function (profiles) {
-      let select = document.getElementById('profileSelect');
-      let avatarImg = document.getElementById('navbar__profileAvatar');
+      let select = document.getElementById('profil-select');
 
       if (select.selectedIndex == 0) {
-        avatarImg.classList.add('hidden');
         DataProfile.setCurrentUser(null);
         console.log("Utilisateur déconnecté, currentUser:", DataProfile.getCurrentUser());
         C.getMovieCategories(-1);
@@ -96,7 +108,6 @@
       let currentUser = {
         id: profiles,
         name: selectedOption.getAttribute('data-profile-name'),
-        avatar: selectedOption.getAttribute('data-avatar'),
         minAge: selectedOption.getAttribute('data-min-age')
       };
       C.getMovieCategories(currentUser.minAge);
