@@ -1,8 +1,8 @@
 .MovieDetail {
     display: flex;
     flex-direction: column;
-    font-family: var(--ff-sans);
     width: 95%;
+    font-family: var(--ff-sans);
 }
 
 .MovieDetail__container{
@@ -29,6 +29,7 @@
 
 .MovieDetail__titre {
     text-align: center;
+    margin-top: 5rem;
     font-size: 5rem;
     color: var(--color-white);
 }

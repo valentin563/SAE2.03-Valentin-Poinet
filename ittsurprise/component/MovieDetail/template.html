@@ -3,19 +3,31 @@
         <iframe src="{{trailer}}" width="100%" height="100%" frameborder="0">
         </iframe>
     </div>
-    
-    <h1 class=" MovieDetail__titre">{{name}}</h1>
-    <h2 class=" MovieDetail__director">{{director}}</h2>
-    
+
+
+
     <div class="MovieDetail__container">
+
         <div class="MovieDetail__container_info">
+
             <ul class="MovieDetail__info">
+
+                <li class="MovieDetail__category">{{category}}</li>
+
+                <li class="MovieDetail__titre">{{name}}</li>
+
+                <li class="MovieDetail__year">Année de sortie : {{year}}</li>
+
                 <li class="MovieDetail__descritpion">{{descritption}}</li>
-                <li class="MovieDetail__year">Année de sortie : <span class="MovieDetail__year_texte">{{year}}</span></li>
-                <li class="MovieDetail__category">Catégorie : <span class="MovieDetail__year_texte">{{category}}</span></li>
-                <li class="MovieDetail__li align-center">+{{min_age}}</li>
+
+                <li class=" MovieDetail__director">{{director}}</li>
+
             </ul>
         </div>
+
+        <span class="align-center">+{{min_age}}</span>
+
     </div>
-    
+    </div>
+
 </section>

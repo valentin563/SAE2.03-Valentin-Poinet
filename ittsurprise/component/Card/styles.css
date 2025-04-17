@@ -2,8 +2,8 @@
     background-color: var(--color-bg);
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: start;
+    overflow: hidden;
     align-items: center;
     text-align: center;
     padding-top: 6rem;
@@ -16,18 +16,25 @@
     justify-content: center;
     overflow: hidden;
     cursor: pointer;
+    margin-bottom: 1rem;
     margin-top: 2rem;
     width: 18.529rem;   
     height: 27.857rem;
-    margin-bottom: 5rem;
     border-radius: 0.3rem;
     background-color: var(--color-gray-dark);
     color: var(--color-white);
-    /* border: solid var(--color-white); */
+    border: solid 0.112rem var(--color-gray);
 }
 
-.card:hover .card_image{
-    transform: scale(1.2);
+
+
+.card:hover {
+
+    .card_image{
+        transform: scale(1.2);
+    
+    }
+
 }
 
 .container_card_image{
@@ -37,11 +44,4 @@
 .card_image{
     transition: 300ms all;
     height: 100%;
-}
-
-.card_titre{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0.5rem;
-    font-size: 1rem;
 }
