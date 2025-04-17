@@ -1,12 +1,13 @@
 .MovieDetail {
     display: flex;
     flex-direction: column;
+    width: 100%;
     font-family: var(--ff-sans);
     
 }
 
 .MovieDetail__trailer {
-    width: 108rem;
+    width: 100%;
     height: 49.563rem;
     align-content: center;
 }
@@ -42,7 +43,7 @@
 .MovieDetail__titre {
     text-align: center;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.7rem;
     color: var(--color-white);
 }
 

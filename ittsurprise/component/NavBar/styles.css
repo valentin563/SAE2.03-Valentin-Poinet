@@ -6,22 +6,23 @@
   color: var(--color-fg);
   background-color: var(--color-bg);
   border-bottom: solid 0.1rem var(--color-white-border);
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
 
   .navbar__item {
-    --_offset: 0.2rem;
     padding: 0.5rem 1rem;
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 0.1rem;
     text-underline-offset: var(--_offset);
     cursor: pointer;
+    border: none;
     transition: text-underline-offset 0.2s ease-in-out;
     &:hover {
-      --_offset: 0.5rem;
+      background-color: var(--color-gray);
+      border-radius: 0.5rem;
     }
   }
   .navbar__list {
@@ -32,13 +33,11 @@
 }
 
 .navbar__container_logo{
-  object-position: 50% 50%;
-  /* width: 4rem;
-  height: 2rem; */
   overflow: hidden;
 }
 
 .navbar__logo{
+  object-position: 50% 50%;
   width: 4rem;
 }
 
