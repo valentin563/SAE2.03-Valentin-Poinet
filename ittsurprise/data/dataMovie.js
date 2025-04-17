@@ -1,0 +1,65 @@
+// URL où se trouve le répertoire "server" sur mmi.unilim.fr
+let HOST_URL = "https://mmi.unilim.fr/~poinet2/SAE2.03-Valentin-Poinet";//"http://mmi.unilim.fr/~????"; // CHANGE THIS TO MATCH YOUR CONFIG
+
+let DataMovie = {};
+
+/**
+    * Fetches data from the server based on the specified day.
+    *
+    * @param {string} day - The day parameter to be sent to the server.
+    * @param {string} week - The day parameter to be sent to the server.
+    * @returns The response from the server.
+    * 
+    * DataMenu.request permet de récupérer des données depuis le serveur.
+    * Elle prend en paramètre une semaine (1, 2, ..., 52) et un jour (lundi mardi...)
+    * renvoie les données contenues dans la réponse du serveur (data).
+    */
+DataMovie.request = async function () {
+    // fetch permet d'envoyer une requête HTTP à l'URL spécifiée. 
+    // L'URL est construite en concaténant HOST_URL à "/server/script.php?direction=" et la valeur de la variable dir. 
+    // L'URL finale dépend de la valeur de HOST_URL et de dir.
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=readmovies");
+    // answer est la réponse du serveur à la requête fetch.
+    // On utilise ensuite la méthode json() pour extraire de cette réponse les données au format JSON.
+    // Ces données (data) sont automatiquement converties en objet JavaScript.
+    let data = await answer.json();
+    // Enfin, on retourne ces données.
+    return data;
+}
+
+
+DataMovie.requestMovieDetails = async function (id) {
+    // fetch permet d'envoyer une requête HTTP à l'URL spécifiée. 
+    // L'URL est construite en concaténant HOST_URL à "/server/script.php?direction=" et la valeur de la variable dir. 
+    // L'URL finale dépend de la valeur de HOST_URL et de dir.
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=readmoviedetails&id=" + id);
+    let data = await answer.json();
+    return data;
+}
+
+
+
+DataMovie.requestCategory = async function () {
+    // fetch permet d'envoyer une requête HTTP à l'URL spécifiée. 
+    // L'URL est construite en concaténant HOST_URL à "/server/script.php?direction=" et la valeur de la variable dir. 
+    // L'URL finale dépend de la valeur de HOST_URL et de dir.
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=readcategory");
+    let data = await answer.json();
+    return data;
+
+}
+
+DataMovie.requestMovieCategories = async function (idcategory, age) {
+    // Si age est -1 ou undefined, ne pas ajouter de filtre d'âge
+    let url = HOST_URL + "/server/script.php?todo=readmoviescategory&id=" + idcategory;
+    // N'ajouter le filtre d'âge que si age est défini et différent de -1
+    if (age != undefined && age != -1) {
+        url += "&min_age=" + age;
+    }
+    let answer = await fetch(url);
+    let data = await answer.json();
+    return data;
+}
+
+
+export { DataMovie };
